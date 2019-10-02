@@ -7,27 +7,28 @@ class Form extends Component {
     this.state = {
      nombre: ""
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.verCambio = this.verCambio.bind(this);
   }
-  handleChange(event) {
+  verCambio(event) {
     this.setState({nombre: event.target.value});
   }
 
   render() {
     return (
-    <div className="contenedor">
-      <form>
-        <label>Ingresá tu nombre</label>
-        <input
-          type="text"
-          name="nombre"
-          value={this.state.nombre} 
-          onChange={this.handleChange}
-        />
-      </form>
-      <div className="ver-nombre">
-      <h3>Tu nombre es: {this.state.nombre}</h3>
-    </div>
+    <div className="App">
+      <div className="contenedor">
+        <form>
+          <label>Ingresá tu nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Ej. Gastón"
+            value={this.state.nombre} 
+            onChange={this.verCambio}
+          />
+        </form>
+        <h3>Tu nombre es: {this.state.nombre}</h3>
+      </div>
     </div>
     );
   }
